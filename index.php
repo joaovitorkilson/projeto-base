@@ -1,6 +1,6 @@
 <?php
 
-require_once "./conect.php";
+require_once "./connect.php";
 
 $query = $pdo->query("SELECT * FROM users");
 
@@ -10,7 +10,7 @@ $password = '123';
 $passCrip = md5($password);
 
 if ($lines == 0) {
-    $pdo->query("INSERT INTO users SET name = '$sistemName', email = '$sistemEmail', pass = '$password', pass_crip = '$passCrip', level = 'Administrador', active = 'true', picture = 'sem-foto.jpg', cell_number = '$sistemNumber'");
+    $pdo->query("INSERT INTO users SET name = '$sistemName', email = '$sistemEmail', pass = '$password', pass_crip = '$passCrip', level = 'Administrador', active = 'true', picture = 'sem-foto.jpg', cell_number = '$sistemNumber', date = curDate()");
 }
 
 ?>
@@ -28,8 +28,8 @@ if ($lines == 0) {
     <section class="login">
         <h1>Login</h1>
         <form class="form" method="POST" action="auth.php">
-            <input type="text" name="email" id="email" placeholder="E-mail">
-            <input type="text" name="password" id="password" placeholder="Senha">
+            <input type="text" name="email" id="email" placeholder="E-mail" required>
+            <input type="text" name="password" id="password" placeholder="Senha" required>
             <button>Login</button>
         </form>
         </div>

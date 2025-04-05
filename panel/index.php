@@ -1,6 +1,6 @@
 <?php 
 @session_start();
-require_once("../conect.php");
+require_once("../connect.php");
 require_once("verify.php");
 
 
@@ -344,7 +344,7 @@ if ($lines > 0) {
 
 
     <!-- Mascaras JS -->
-    <script type="text/javascript" src="../../js/mascaras.js"></script>
+    <script type="text/javascript" src="js/mascaras.js"></script>
 
     <!-- Ajax para funcionar Mascaras JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
@@ -438,7 +438,7 @@ if ($lines > 0) {
                     </div>
 
 
-                    <input type="hidden" name="id_usuario" value="<?php echo $id_usuario ?>">
+                
 
 
                     <br>

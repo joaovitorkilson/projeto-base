@@ -2,7 +2,7 @@
 
 @session_start();
 
-require_once "./conect.php";
+require_once "./connect.php";
 
 
 
@@ -20,9 +20,16 @@ $lines = @count($queryResult);
 
 if ($lines > 0) {
 
+    if (!$queryResult[0]['active'] == 1) {
+        echo "<script>window.alert('Seu acesso foi desativado!')</script>";
+        echo "<script>window.location='index.php'</script>";
+    }
+
     $_SESSION['userName'] = $queryResult[0]['name'];
     $_SESSION['userId'] = $queryResult[0]['id'];
     $_SESSION['userLevel'] = $queryResult[0]['level'];
+
+
 
     echo "<script>window.location='panel'</script>";
 
